@@ -1,9 +1,20 @@
 import React from 'react';
+import { BrowserRouter, Route, Switch } from 'react-router-dom'
+import Home from './Routes/Home';
+import Registration from './users/UserRegistration';
+import Login from './users/UserLogin'
+
 
 function App() {
   return (
     <div className="App">
-      <h1>Hell World</h1>
+      <BrowserRouter>
+        <Switch>
+          <Route exact path='/' component={Home}/>
+          <Route exact path='/registration' component={Registration}/>
+          <Route exact path='/login' component={Login}/>
+        </Switch>
+      </BrowserRouter>
     </div>
   );
 }
