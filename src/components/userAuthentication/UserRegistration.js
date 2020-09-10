@@ -1,6 +1,9 @@
 import React, { Component } from 'react';
+import { fetchUserRegistration } from '../../actions/userActions'
+import { withRouter }from 'react-router-dom'
+import { connect } from 'react-redux'
 
-export default class Registration extends Component {
+class Registration extends Component {
     constructor(props) {
         super(props)
         this.state = {
@@ -14,7 +17,14 @@ export default class Registration extends Component {
     }
     handleSubmit(event) {
         event.preventDefault()
-
+        this.props.fetchUserRegistration(this.state)
+        this.setState({
+            email: '',
+            password: '',
+            password_confirmation: '',
+            name: ''
+        })
+        this.props.history.push('/profile')
     }
     handleOnchange(event) {
         this.setState({
@@ -36,3 +46,6 @@ export default class Registration extends Component {
         )
     }
 }
+
+export default connect(null, { fetchUserRegistration })(withRouter(Registration))
+
