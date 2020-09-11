@@ -6,12 +6,11 @@ export default class Profile extends Component {
         if (this.props.userProps.loading) {
             return <div>Loading ... </div>
         } else {
-        return <div>{this.props.userProps.user.email}</div>
+            return this.props.userProps.user.map(user => <div key={user.id}>{user.email}</div>)
         }
     }
     
     render() {
-        console.log(this.props.userProps.user)
         return (
             <div>
                 {this.handleUserProps()}

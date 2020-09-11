@@ -6,6 +6,8 @@ import Login from './userAuthentication/UserLogin'
 import Profile from './Profile';
 import { fetchCurrentUser } from '../actions/userActions'
 import { connect } from 'react-redux';
+import Navbar from './Navbar';
+import '../App.css'
 
 class App extends Component {
   componentDidMount() {
@@ -15,11 +17,12 @@ class App extends Component {
     return (
       <div className="App">
         <BrowserRouter>
+        <Navbar userData={this.props}/>
           <Switch>
             <Route exact path='/profile' render={props => (<Profile {...props} userProps={this.props}/> )} />
-            <Route exact path='/' render={props => (<Home {...props} /> )} />
-            <Route exact path='/registration' render={props => (<Registration {...props} /> )} />
-            <Route exact path='/login' render={props => (<Login {...props} /> )} />
+            <Route exact path='/' render={props => (<Home {...props} userProps={this.props}/> )} />
+            <Route exact path='/registration' component={Registration}/>
+            <Route exact path='/login' component={Login}/>
           </Switch>
         </BrowserRouter>
       </div>
@@ -30,7 +33,8 @@ class App extends Component {
 const mapStateToProps = state => {
   return ({
     user: state.user,
-    loading: state.loading
+    loading: state.loading,
+    logged_in: state.logged_in
   })
 }
 

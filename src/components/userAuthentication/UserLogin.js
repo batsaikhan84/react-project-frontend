@@ -1,17 +1,21 @@
 import React, { Component } from 'react';
+import { connect } from 'react-redux';
+import { fetchUserLogin } from '../../actions/userActions'
 
-export default class Login extends Component {
-    constructor(props) {
-        super(props)
-        this.state = {
+
+class Login extends Component {
+        state = {
             email: '',
             password: ''
         }
-        this.handleOnchange = this.handleOnchange.bind(this)
-        this.handleSubmit = this.handleSubmit.bind(this)
-    }
     handleSubmit(event) {
         event.preventDefault()
+        this.props.fetchUserLogin(this.state)
+        this.setState({
+            email: '',
+            password: ''
+        })
+        this.props.history.push('/profile')
     }
     handleOnchange(event) {
         this.setState({
@@ -22,9 +26,9 @@ export default class Login extends Component {
     render() {
         return (
             <div className='login'>
-                <form className='form' onSubmit={this.handleSubmit}> 
-                    <input type='email' name='email' placeholder='Email' value={this.state.email} onChange={this.handleOnchange} required/>
-                    <input type='password' name='password' placeholder='Password' value={this.state.password} onChange={this.handleOnchange} required/>
+                <form className='form' onSubmit={(event) => this.handleSubmit(event)}> 
+                    <input type='email' name='email' placeholder='Email' value={this.state.email} onChange={(event) => this.handleOnchange(event)} required/>
+                    <input type='password' name='password' placeholder='Password' value={this.state.password} onChange={(event) => this.handleOnchange(event)} required/>
 
                     <input className='button-form' type='submit' value='Sing in'/>
                 </form>
@@ -32,3 +36,5 @@ export default class Login extends Component {
         )
     }
 }
+
+export default connect(null, { fetchUserLogin })(Login)
