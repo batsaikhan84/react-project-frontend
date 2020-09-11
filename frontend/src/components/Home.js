@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 
 class Home extends Component {
     user() {
-        return this.props.userProps.user.map(user => <h1>{user.email}</h1>)
+        return this.props.userProps.user.map(user => <h1 key={user.id}>{user.name}</h1>)
     }
     render() {
         return (

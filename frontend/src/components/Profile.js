@@ -6,14 +6,15 @@ export default class Profile extends Component {
         if (this.props.userProps.loading) {
             return <div>Loading ... </div>
         } else {
-            return this.props.userProps.user.map(user => <div key={user.id}>{user.email}</div>)
+        return this.props.userProps.user.map(user => <h3 key={user.id}><li>User Name: {user.name}</li><li>User Email: {user.email}</li></h3>)
         }
     }
     
     render() {
+        console.log(this.props)
         return (
-            <div>
-                {this.handleUserProps()}
+            <div className='profile'>
+                {this.props.userProps.logged_in ? this.handleUserProps() : <h2>There is no user logged in</h2>}
             </div>
         )
     }

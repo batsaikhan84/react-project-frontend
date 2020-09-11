@@ -108,6 +108,27 @@
 .home .registerButton {
     margin: 35px 370px
 }
+.profile {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    user-select: none
+}
+.profile h3 {
+    color: rgb(115, 115, 175);
+    font-size: 30px;
+    font-weight: bold;
+    width: 900px;
+    text-align: center;
+}
+.profile h2 {
+    color: rgb(115, 115, 175);
+    font-size: 30px;
+    font-weight: bold;
+    width: 900px;
+    text-align: center;
+}
 .registerButton {
     height: 50px;
     width: 150px;
