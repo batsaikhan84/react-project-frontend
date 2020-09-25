@@ -28,7 +28,7 @@ Please cd into frontend directory to get started with the frontend appliation. T
 ```shell
 npm start
 ```
-command will start the frontend application. It will automatically open at http://localhost:3000.
+This command will start the frontend application. It automatically opens at http://localhost:3000.
 
 ### Initialize the database
 ```shell
