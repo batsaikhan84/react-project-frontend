@@ -41,7 +41,7 @@ ruby -v
 ```
 Version `ruby 2.6.2`
 
-Does not match Ruby version? Please install the right ruby version:
+please install the ruby version 2.6.2 if it is different:
 
 ```shell
 rbenv install 2.6.2
