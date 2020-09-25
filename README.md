@@ -1,9 +1,7 @@
 # React-Redux Project
  
-The purpose of this project is to build standard user authentication that can be used by anyone who is looking for ready to use user authentication for an application.<br />
-It consists of two routes: home and profile as well as login, logout and registration buttons.<br />
-Its backend is powered by Rails and in the frontend, React and Redux are utilized in order to accomplish well organized user data flow to manage components effectively.<br />
-In the backend, the session controller is playing an important role in managing user authentication. In addition, the user model is responsible for validation and storing user information. <br />
+The purpose of this project is to build standard user authentication that can be used by anyone who is looking for ready to use user authentication for an application. It consists of two routes: home and profile as well as login, logout and registration buttons.<br />
+In the frontend, React and Redux are utilized in order to accomplish well organized user data flow and to effectively manage components. Its backend is powered by Rails. The session controller is playing an important role in managing user authentication in the backend. In addition, the user model is responsible for validation and storing user information. <br />
  
 ## Install
 
