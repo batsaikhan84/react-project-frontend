@@ -42,25 +42,6 @@ It correctly bundles React in production mode and optimizes the build for the be
 The build is minified and the filenames include the hashes.<br />
 Your app is ready to be deployed!
 
-### Initialize the database
-
-```shell
-rails db:create db:migrate db:seed
-```
-
-### Ruby version
-
-```shell
-ruby -v
-```
-Version `ruby 2.6.2`
-
-please install the ruby version 2.6.2 if different:
-
-```shell
-rbenv install 2.6.2
-```
-
 ### please refer to backend application
 
 https://github.com/batsaikhan84/react-project-backend.git
