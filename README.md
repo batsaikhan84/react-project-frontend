@@ -28,7 +28,7 @@ Using NPM
 npm install
 ```
 
-In order to avoid conflict with the frontend app that opens at http://localhost:3000 in the development mode  , choose port 3001:
+In order to avoid conflict with the frontend app that opens at http://localhost:3000 in the development mode  , choose backend application port at 3001:
 
 ```shell
 rails s -p 3001
